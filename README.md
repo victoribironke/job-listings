@@ -12,7 +12,7 @@ This is a solution to the [Job listings with filtering challenge on Frontend Men
 
 ### Links
 
-- Live Site URL: [Job Listings](https://your-live-site-url.com)
+- Live Site URL: [Job Listings](https://techjoblistings.netlify.app/)
 
 ## My process
 
@@ -27,5 +27,5 @@ This is a solution to the [Job listings with filtering challenge on Frontend Men
 ## Author
 
 - Website - [Victor Ibironke](https://www.victoribironke.netlify.app)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/vdiqbd)
+- Frontend Mentor - [@vdiqbd](https://www.frontendmentor.io/profile/vdiqbd)
 - Twitter - [@victoribironke\_](https://www.twitter.com/victoribironke_)
