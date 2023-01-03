@@ -5,11 +5,22 @@ import Card from "../comps/Card";
 const Home = () => {
   const [data, setData] = useState([]);
 
+  const filter = (e) => {
+    const res = data.filter((dat) => {
+      return (
+        dat.role == e ||
+        dat.level == e ||
+        dat.languages.includes(e) ||
+        dat.tools.includes(e)
+      );
+    });
+    setData(res);
+  };
+
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setData(data);
       })
       .catch((err) => console.error(err));
@@ -25,25 +36,18 @@ const Home = () => {
       </Head>
       <div className="head-img"></div>
       <div className="card-div">
-        {/* Dont forget to map the stuff oo */}
-        {/* <Card
-          src="/photosnap.svg"
-          name="Photosnap"
-          new={false}
-          featured={true}
-          title="Senior Frontend Developer"
-          tags="1d ago • Full Time • USA only"
-          stacks={["Frontend", "Senior", "HTML", "CSS", "JavaScript"]}
-        /> */}
         {data.map((dat) => (
           <Card
+            key={dat.id}
             src={dat.logo}
+            alt={dat.company}
             name={dat.company}
             title={dat.position}
             new={dat.new}
             featured={dat.featured}
             tags={`${dat.postedAt} • ${dat.contract} • ${dat.location}`}
             stacks={[dat.role, dat.level, ...dat.languages, ...dat.tools]}
+            callback={filter}
           />
         ))}
       </div>
