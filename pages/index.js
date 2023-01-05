@@ -18,6 +18,7 @@ const Home = () => {
   };
 
   useEffect(() => {
+    alert("Click on a tag to show jobs that have the tag.");
     fetch("/data.json")
       .then((res) => res.json())
       .then((data) => {
